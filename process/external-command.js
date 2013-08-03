@@ -34,3 +34,5 @@ child.stdout.on('data', function(data){
 child.stderr.on('data', function(data){
   console.log('tail error output: ' + data);
 });
+
+// Send data to child process.
