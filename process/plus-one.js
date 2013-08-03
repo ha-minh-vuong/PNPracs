@@ -19,5 +19,5 @@ process.stdin.on('data', function(data){
   } catch (err) {
     process.stderr._write(err.message + '\n');
   }
-})
+});
 
