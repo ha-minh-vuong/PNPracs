@@ -19,3 +19,18 @@ exec('cat *.js | wc -l', function(err, stdout, stderr){
   console.log(stdout);
 });
 
+
+// Spawn child process
+
+// Launch a child process with a "tail -f /var/log/system.log" command.
+var spawn = require('child_process').spawn;
+var child = spawn('tail', ['-f', '/var/log/system.log']);
+
+// Listen for data from child process.
+child.stdout.on('data', function(data){
+  console.log('tail output: ' + data);
+});
+
+child.stderr.on('data', function(data){
+  console.log('tail error output: ' + data);
+});
