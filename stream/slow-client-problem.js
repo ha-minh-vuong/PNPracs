@@ -37,7 +37,7 @@ require('http').createServer(function(req, res){
 
   var rs = fs.createReadStream('/path/to/file');
 
-  rs.pipe(res);
+  rs.pipe(res, {end : false});   // prevent end() is called on destination when readable stream ends.
 
 }).listen(8080);
 
