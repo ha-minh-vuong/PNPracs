@@ -29,3 +29,15 @@ require('http').createServer(function(req, res){
   });
 
 }).listen(8080);
+
+
+// Use pipe
+
+require('http').createServer(function(req, res){
+
+  var rs = fs.createReadStream('/path/to/file');
+
+  rs.pipe(res);
+
+}).listen(8080);
+
