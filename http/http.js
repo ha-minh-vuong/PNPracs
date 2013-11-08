@@ -7,3 +7,5 @@ server.on('request', function (req, res) {
 	res.write('Hello world');
 	res.end();
 });
+
+server.listen(55555);
